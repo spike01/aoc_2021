@@ -9,8 +9,8 @@ fn main() {
 fn power_consumption(input: String) -> u32 {
     let lines = input.lines();
 
-    // this seems... not like the right way to do this
-    let line_len = lines.clone().peekable().peek().unwrap().len();
+    let mut lines_peekable = lines.clone().peekable();
+    let line_len = lines_peekable.peek().unwrap().len();
 
     let input_len = lines.clone().count();
     let mut set_bit_counters: Vec<u16> = vec![0; line_len];
